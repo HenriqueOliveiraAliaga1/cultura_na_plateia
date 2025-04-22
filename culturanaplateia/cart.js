@@ -8,24 +8,28 @@ document.addEventListener('DOMContentLoaded', function() {
     const cartTotal = document.getElementById('cartTotal');
     const cartCount = document.querySelector('.cart-count');
     
-    let cart = [];
+    // Recuperar carrinho do localStorage, se existir
+    let cart = localStorage.getItem('cartItems') ? 
+               JSON.parse(localStorage.getItem('cartItems')) : [];
 
-    
+    // Função para mostrar o carrinho
     function openCart() {
         cartSidebar.classList.add('active');
         cartOverlay.classList.add('active');
     }
 
+    // Função para fechar o carrinho
     function closeCart() {
         cartSidebar.classList.remove('active');
         cartOverlay.classList.remove('active');
     }
 
-    
+    // Adicionar event listeners para abrir/fechar o carrinho
     cartIcon.addEventListener('click', openCart);
     closeCartBtn.addEventListener('click', closeCart);
     cartOverlay.addEventListener('click', closeCart);
 
+    // Função para atualizar a exibição do carrinho
     function updateCart() {
         cartItems.innerHTML = '';
         let total = 0;
@@ -55,8 +59,30 @@ document.addEventListener('DOMContentLoaded', function() {
 
         cartTotal.textContent = `R$ ${total.toFixed(2)}`;
         cartCount.textContent = count;
+        
+        // Salvar carrinho no localStorage
+        localStorage.setItem('cartItems', JSON.stringify(cart));
+        
+        // Exibir notificação se um item for adicionado/removido
+        if (cart.length > 0) {
+            showNotification('Carrinho atualizado');
+        }
     }
 
+    // Função para mostrar notificação temporária
+    function showNotification(message) {
+        const toast = document.getElementById('toast');
+        if (toast) {
+            toast.textContent = message;
+            toast.classList.add('active');
+            
+            setTimeout(() => {
+                toast.classList.remove('active');
+            }, 3000);
+        }
+    }
+
+    // Função para adicionar item ao carrinho
     function addToCart(item) {
         const existingItem = cart.find(cartItem => cartItem.id === item.id);
         
@@ -70,41 +96,53 @@ document.addEventListener('DOMContentLoaded', function() {
         openCart();
     }
 
-    
+    // Função auxiliar para extrair preço do texto
     function extractPrice(priceText) {
         if (!priceText) return 0;
         const match = priceText.match(/R\$\s*(\d+(?:\.\d{3})*(?:,\d{2})?)/);
         if (match) {
+            // Converter formato brasileiro para número
             return parseFloat(match[1].replace('.', '').replace(',', '.'));
         }
         return 0;
     }
 
-    
-    document.querySelectorAll('.promo-button, .event-button').forEach(button => {
+    // Adicionar event listeners para botões "Comprar"
+    document.querySelectorAll('.promo-button, .event-button, .btn-comprar-principal').forEach(button => {
         button.addEventListener('click', (e) => {
+            // Ignorar se for o botão de finalizar compra no carrinho ou em formulários
+            if (button.id === 'checkoutButton' || button.closest('form')) return;
+            
             e.preventDefault();
             
-            // Encontrar o card do evento
-            const eventCard = e.target.closest('.event-card, .flip-card');
+            // Encontrar o card do evento mais próximo
+            const eventCard = e.target.closest('.event-card, .flip-card, .ticket-list');
             if (!eventCard) return;
 
             // Capturar dados do evento
             let name, price, image;
 
-            // Para cards flip
+            // Para cards flip (músicos, museus, etc)
             if (eventCard.classList.contains('flip-card')) {
                 name = eventCard.querySelector('.flip-card-front h3').textContent;
                 const priceElement = eventCard.querySelector('.event-price');
                 price = priceElement ? extractPrice(priceElement.textContent) : 100.00;
                 image = eventCard.querySelector('.flip-card-front img').src;
             } 
-            // Para event cards
+            // Para event cards (na página de eventos)
             else if (eventCard.classList.contains('event-card')) {
-                name = eventCard.querySelector('h3').textContent;
-                const priceElement = eventCard.querySelector('.promo-price');
+                name = eventCard.querySelector('h4').textContent;
+                const priceElement = eventCard.querySelector('.event-price span');
                 price = priceElement ? extractPrice(priceElement.textContent) : 100.00;
-                image = eventCard.querySelector('img').src;
+                image = 'images/evento1.webp'; // Imagem padrão se não houver
+            }
+            // Para tickets
+            else if (eventCard.classList.contains('ticket-list')) {
+                name = eventCard.querySelector('.ticket-header').textContent;
+                const priceElement = eventCard.querySelector('.ticket-price p');
+                price = priceElement ? extractPrice(priceElement.textContent) : 100.00;
+                const iconElement = eventCard.querySelector('.ticket-icon img');
+                image = iconElement ? iconElement.src : 'images/reserva.png';
             }
 
             console.log('Adicionando ao carrinho:', { name, price, image }); // Debug
@@ -118,7 +156,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    
+    // Listener para botões de quantidade e remoção no carrinho
     cartItems.addEventListener('click', (e) => {
         if (e.target.classList.contains('quantity-btn')) {
             const id = e.target.dataset.id;
@@ -142,42 +180,44 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    
+    // Função para finalizar a compra
     const checkoutButton = document.getElementById('checkoutButton');
     
-    checkoutButton.addEventListener('click', function() {
-        if (cart.length === 0) {
-            alert('Seu carrinho está vazio!');
-            return;
-        }
-
-        
-        localStorage.setItem('cartItems', JSON.stringify(cart));
-        
-        
-        let resumo = 'Resumo da compra:\n\n';
-        let total = 0;
-        
-        cart.forEach(item => {
-            const subtotal = item.price * item.quantity;
-            resumo += `${item.name} - ${item.quantity}x R$ ${item.price.toFixed(2)} = R$ ${subtotal.toFixed(2)}\n`;
-            total += subtotal;
-        });
-        
-        resumo += `\nTotal: R$ ${total.toFixed(2)}`;
-        
-        
-        localStorage.setItem('cartSummary', resumo);
-
-        
-        window.location.href = 'pagamento.html';
-    });
-
+    if (checkoutButton) {
+        checkoutButton.addEventListener('click', function() {
+            if (cart.length === 0) {
+                showNotification('Seu carrinho está vazio!');
+                return;
+            }
     
+            // Preparar resumo da compra para exibição na página de pagamento
+            let resumo = '';
+            let total = 0;
+            
+            cart.forEach(item => {
+                const subtotal = item.price * item.quantity;
+                resumo += `${item.name} - ${item.quantity}x R$ ${item.price.toFixed(2)} = R$ ${subtotal.toFixed(2)}\n`;
+                total += subtotal;
+            });
+            
+            resumo += `\nTotal: R$ ${total.toFixed(2)}`;
+            
+            // Salvar no localStorage para recuperar na página de pagamento
+            localStorage.setItem('cartSummary', resumo);
+    
+            // Redirecionar para a página de pagamento
+            window.location.href = 'pagamento.html';
+        });
+    }
+
+    // Função para limpar o carrinho
     function clearCart() {
         cart = [];
         updateCart();
         localStorage.removeItem('cartItems');
         localStorage.removeItem('cartSummary');
     }
+    
+    // Inicializar o carrinho ao carregar a página
+    updateCart();
 });

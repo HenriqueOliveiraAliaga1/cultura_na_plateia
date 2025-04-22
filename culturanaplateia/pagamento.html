@@ -3,56 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="payment.css">
     <title>Pagamento - Cultura na Plateia</title>
 </head>
 <body>
-    <div class="wrapper payment-wrapper">
-        <h1>Pagamento</h1>
-        <form id="payment-form" action="#" method="POST">
-            <div class="form-group">
-                <label for="card-number">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg>
-                </label>
-                <input type="text" id="card-number" name="card-number" placeholder="Número do Cartão" maxlength="19" required>
-            </div>
-            <div class="form-group">
-                <label for="card-name">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M12 5.9c1.16 0 2.1.94 2.1 2.1s-.94 2.1-2.1 2.1S9.9 9.16 9.9 8s.94-2.1 2.1-2.1m0 9c2.97 0 6.1 1.46 6.1 2.1v1.1H5.9V17c0-.64 3.13-2.1 6.1-2.1M12 4C9.79 4 8 5.79 8 8s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 9c-2.67 0-8 1.34-8 4v3h16v-3c0-2.66-5.33-4-8-4z"/></svg>
-                </label>
-                <input type="text" id="card-name" name="card-name" placeholder="Nome no Cartão" maxlength="50" required>
-            </div>
-            <div class="flex-row">
-                <div class="form-group">
-                    <label for="expiry-date">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/></svg>
-                    </label>
-                    <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/AA" maxlength="5" required>
-                </div>
-                <div class="form-group">
-                    <label for="cvv">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
-                    </label>
-                    <input type="text" id="cvv" name="cvv" placeholder="CVV" maxlength="4" required>
+    <!-- Link para acessibilidade -->
+    <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+    
+    <header class="site-header">
+        <nav class="main-nav">
+            <a href="index.html" class="logo">Cultura na Plateia</a>
+            <div class="nav-container">
+                <ul class="nav-links">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="eventos.html">Eventos</a></li>
+                    <li><a href="sobre.html">Sobre Nós</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="tela de login e registro/login.html">Login</a></li>
+                </ul>
+                <div class="cart-icon" id="cartIcon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
                 </div>
             </div>
-            <button type="submit">Finalizar Pagamento</button>
-        </form>
-        <p><a href="index.html">Voltar para a página inicial</a></p>
+            <div class="menu-icon">&#9776;</div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <div class="payment-wrapper">
+            <h1>Pagamento</h1>
+            <div id="cart-summary" class="cart-summary">
+                <!-- Resumo do carrinho será preenchido via JavaScript -->
+            </div>
+            <form id="payment-form" action="#" method="POST">
+                <div class="form-group">
+                    <label for="card-number">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg>
+                    </label>
+                    <input type="text" id="card-number" name="card-number" placeholder="Número do Cartão" maxlength="19" required>
+                </div>
+                <div class="form-group">
+                    <label for="card-name">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M12 5.9c1.16 0 2.1.94 2.1 2.1s-.94 2.1-2.1 2.1S9.9 9.16 9.9 8s.94-2.1 2.1-2.1m0 9c2.97 0 6.1 1.46 6.1 2.1v1.1H5.9V17c0-.64 3.13-2.1 6.1-2.1M12 4C9.79 4 8 5.79 8 8s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 9c-2.67 0-8 1.34-8 4v3h16v-3c0-2.66-5.33-4-8-4z"/></svg>
+                    </label>
+                    <input type="text" id="card-name" name="card-name" placeholder="Nome no Cartão" maxlength="50" required>
+                </div>
+                <div class="flex-row">
+                    <div class="form-group">
+                        <label for="expiry-date">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/></svg>
+                        </label>
+                        <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/AA" maxlength="5" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cvv">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+                        </label>
+                        <input type="text" id="cvv" name="cvv" placeholder="CVV" maxlength="4" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn-comprar-principal">Finalizar Pagamento</button>
+            </form>
+            <p><a href="index.html">Voltar para a página inicial</a></p>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Sobre Nós</h4>
+                <p>Cultura na Plateia é sua fonte confiável para ingressos de eventos culturais e shows em São Paulo.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Contato</h4>
+                <ul>
+                    <li><i class="fas fa-phone"></i> (11) 95273-4725</li>
+                    <li><i class="fas fa-envelope"></i> contato@culturanaplateia.com.br</li>
+                    <li><i class="fas fa-map-marker-alt"></i> São Paulo, SP</li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Redes Sociais</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 Cultura na Plateia. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Botão de tema -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema escuro">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- Botão voltar ao topo -->
+    <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Toast notifications -->
+    <div class="toast" id="toast"></div>
+
+    <!-- Loader para carregamento -->
+    <div class="loader" id="loader">
+        <div class="loader-spinner"></div>
     </div>
+
+    <script src="cart.js"></script>
     <script>
     document.addEventListener('DOMContentLoaded', function() {
+        // Carregar o resumo do carrinho
+        const cartSummary = document.getElementById('cart-summary');
+        const summary = localStorage.getItem('cartSummary');
+        
+        if (summary) {
+            cartSummary.innerHTML = `<h3>Resumo da Compra</h3><pre>${summary}</pre>`;
+        } else {
+            cartSummary.innerHTML = '<p>Nenhum item no carrinho</p>';
+        }
+        
         const paymentForm = document.querySelector('#payment-form');
         if (paymentForm) {
             paymentForm.addEventListener('submit', function(e) {
                 e.preventDefault();
                 
-                alert('Pagamento processado com sucesso!');
-                window.location.href = 'index.html';
+                // Exibir um toast de sucesso
+                const toast = document.getElementById('toast');
+                toast.textContent = 'Pagamento processado com sucesso!';
+                toast.classList.add('active', 'success');
+                
+                // Limpar o carrinho
+                localStorage.removeItem('cartItems');
+                localStorage.removeItem('cartSummary');
+                
+                // Redirecionar após 2 segundos
+                setTimeout(function() {
+                    window.location.href = 'index.html';
+                }, 2000);
+            });
+        }
+        
+        // Formatação do campo de número do cartão
+        const cardNumberInput = document.getElementById('card-number');
+        if (cardNumberInput) {
+            cardNumberInput.addEventListener('input', function(e) {
+                let value = e.target.value.replace(/\D/g, '');
+                if (value.length > 0) {
+                    value = value.match(/.{1,4}/g).join(' ');
+                }
+                e.target.value = value;
+            });
+        }
+        
+        // Formatação do campo de validade
+        const expiryDateInput = document.getElementById('expiry-date');
+        if (expiryDateInput) {
+            expiryDateInput.addEventListener('input', function(e) {
+                let value = e.target.value.replace(/\D/g, '');
+                if (value.length > 2) {
+                    value = value.substring(0, 2) + '/' + value.substring(2, 4);
+                }
+                e.target.value = value;
             });
         }
     });
     </script>
+    <script src="js/main.js"></script>
 </body>
 </html>
