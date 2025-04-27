@@ -1,0 +1,329 @@
+/* Estilos para a página de eventos */
+
+/* Hero Section */
+.events-hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/events-hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    padding: 0 20px;
+}
+
+.events-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.events-hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+}
+
+/* Filtro de Eventos */
+.events-filter {
+    background-color: #f8f8f8;
+    padding: 40px 0;
+}
+
+.filter-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.filter-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.filter-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.filter-form .form-group {
+    flex: 1 1 200px;
+}
+
+.filter-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+}
+
+.filter-form select,
+.filter-form input[type="date"] {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: #fff;
+}
+
+.filter-form button {
+    padding: 10px 25px;
+    margin-top: 24px;
+    background-color: #FDB813;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-form button:hover {
+    background-color: #e9a912;
+    transform: translateY(-2px);
+}
+
+/* Calendário de Eventos */
+.events-calendar {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.events-calendar h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #333;
+    font-size: 2.2rem;
+}
+
+.calendar-month {
+    margin-bottom: 50px;
+}
+
+.calendar-month h3 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #FDB813;
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.event-card {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.event-date {
+    background-color: #FDB813;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    text-align: center;
+    min-width: 80px;
+}
+
+.event-date .day {
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.event-date .month {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+.event-info {
+    padding: 15px;
+    flex-grow: 1;
+}
+
+.event-info h4 {
+    margin: 0 0 10px;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.event-location, .event-time {
+    color: #666;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+.event-location i, .event-time i {
+    margin-right: 5px;
+    color: #FDB813;
+}
+
+.event-tag {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.event-tag.concert {
+    background-color: #f0e2d3;
+    color: #c86a15;
+}
+
+.event-tag.theater {
+    background-color: #e1ebf5;
+    color: #2d70b5;
+}
+
+.event-tag.museum {
+    background-color: #e6f5e9;
+    color: #38a852;
+}
+
+.event-tag.standup {
+    background-color: #f5e1eb;
+    color: #b52d70;
+}
+
+.event-price {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    min-width: 120px;
+    text-align: right;
+}
+
+.event-price span {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.event-price a {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #FDB813;
+    color: #333;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.event-price a:hover {
+    background-color: #e9a912;
+    transform: translateY(-2px);
+}
+
+/* Paginação */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.page-btn {
+    width: 40px;
+    height: 40px;
+    margin: 0 5px;
+    border: none;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.page-btn.active {
+    background-color: #FDB813;
+    color: #333;
+}
+
+.page-btn:hover:not(.active) {
+    background-color: #e0e0e0;
+}
+
+.page-btn.next {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .events-hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    .events-hero p {
+        font-size: 1rem;
+    }
+    
+    .events-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .filter-form {
+        flex-direction: column;
+    }
+    
+    .filter-form .form-group {
+        width: 100%;
+    }
+    
+    .filter-form button {
+        width: 100%;
+        margin-top: 10px;
+    }
+    
+    .event-card {
+        flex-direction: column;
+    }
+    
+    .event-date {
+        flex-direction: row;
+        padding: 10px;
+        justify-content: space-between;
+    }
+    
+    .event-date .day {
+        margin-right: 5px;
+    }
+    
+    .event-price {
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+    }
+} 

@@ -9,15 +9,18 @@
     <title>Cultura na Plateia</title>
 </head>
 <body>
+    <!-- Link para acessibilidade -->
+    <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+    
     <header class="site-header">
         <nav class="main-nav">
             <a href="#" class="logo">Cultura na Plateia</a>
             <div class="nav-container">
                 <ul class="nav-links">
-                    <li><a href="#inicio">Início</a></li>
-                    <li><a href="#gallery">Galeria</a></li>
-                    <li><a href="#ticket">Ingressos</a></li>
-                    <li><a href="#book">Comprar</a></li>
+                    <li><a href="#inicio" class="active">Início</a></li>
+                    <li><a href="eventos.html">Eventos</a></li>
+                    <li><a href="sobre.html">Sobre Nós</a></li>
+                    <li><a href="blog.html">Blog</a></li>
                     <li><a href="tela de login e registro/login.html">Login</a></li>
                 </ul>
                 <div class="cart-icon" id="cartIcon">
@@ -29,7 +32,7 @@
         </nav>
     </header>
 
-    <main>
+    <main id="main-content">
         <section class="hero" id="inicio">
             <div class="hero-description">
                 <div class="hero-text">  
@@ -522,7 +525,25 @@
     
     <div class="cart-overlay" id="cartOverlay"></div>
 
-    <script src="cart.js"></script>
+    <!-- Botão de tema -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema escuro">
+        <i class="fas fa-moon"></i>
+    </button>
 
+    <!-- Botão voltar ao topo -->
+    <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Toast notifications -->
+    <div class="toast" id="toast"></div>
+
+    <!-- Loader para carregamento -->
+    <div class="loader" id="loader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <script src="cart.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
