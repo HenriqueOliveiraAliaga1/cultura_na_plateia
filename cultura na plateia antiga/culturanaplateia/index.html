@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Cultura na Plateia</title>
+</head>
+<body>
+    <header class="site-header">
+        <nav class="main-nav">
+            <a href="#" class="logo">Cultura na Plateia</a>
+            <div class="nav-container">
+                <ul class="nav-links">
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#gallery">Galeria</a></li>
+                    <li><a href="#ticket">Ingressos</a></li>
+                    <li><a href="#book">Comprar</a></li>
+                    <li><a href="tela de login e registro/login.html">Login</a></li>
+                </ul>
+                <div class="cart-icon" id="cartIcon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </div>
+            </div>
+            <div class="menu-icon">&#9776;</div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="inicio">
+            <div class="hero-description">
+                <div class="hero-text">  
+                    <h1 class="hero-header">
+                        <span style="color:#FDB813">Cultura na Plateia</span>
+                    </h1>
+                    <a href="#book" class="btn-comprar-principal pulse">
+                        Comprar ingresso
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="about" id="gallery">
+            <h2>Galeria</h2>
+            <div class="gallery">
+                <div class="about-image-1">
+                    <img src="images/babymetal.png" loading="lazy" alt="Apresentação do Babymetal"/>
+                </div>
+                <div class="about-image-2">
+                    <div class="image-list">
+                        <img src="images/show.png.jpg" loading="lazy" alt="Show ao vivo"/>
+                    </div>
+                    <div class="image-list">
+                        <img src="images/teatro.png.jpg" loading="lazy" alt="Interior de um teatro"/>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="poster">
+            <h2>Cantores e Músicos</h2>
+            <div class="poster-main">
+                <!-- Morrissey -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="images/Morrissey.png" loading="lazy" alt="Morrissey"/>
+                            <h3>Morrissey</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="event-info">
+                                <p><i class="fas fa-map-marker-alt"></i> Allianz Parque</p>
+                                <p class="address">Av. Francisco Matarazzo, 1705</p>
+                                <p><i class="fas fa-calendar-alt"></i> 15/06/2024</p>
+                                <p><i class="fas fa-clock"></i> 20:00</p>
+                                <p class="event-price">R$ 450,00</p>
+                                <a href="#book" class="event-button">Comprar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pixies -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="images/Pixies.png" loading="lazy" alt="Pixies"/>
+                            <h3>Pixies</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="event-info">
+                                <p><i class="fas fa-map-marker-alt"></i> Espaço Unimed</p>
+                                <p class="address">Rua Tagipuru, 795</p>
+                                <p><i class="fas fa-calendar-alt"></i> 20/07/2024</p>
+                                <p><i class="fas fa-clock"></i> 21:30</p>
+                                <p class="event-price">R$ 380,00</p>
+                                <a href="#book" class="event-button">Comprar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Travis Scott -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="images/Travis Scott.png" loading="lazy" alt="Travis Scott"/>
+                            <h3>Travis Scott</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="event-info">
+                                <p><i class="fas fa-map-marker-alt"></i> Estádio do Morumbi</p>
+                                <p class="address">Praça Roberto Gomes Pedrosa</p>
+                                <p><i class="fas fa-calendar-alt"></i> 10/08/2024</p>
+                                <p><i class="fas fa-clock"></i> 19:00</p>
+                                <p class="event-price">R$ 650,00</p>
+                                <a href="#book" class="event-button">Comprar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- The Weeknd -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="images/The Weeknd.png" loading="lazy" alt="The Weeknd"/>
+                            <h3>The Weeknd</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="event-info">
+                                <p><i class="fas fa-map-marker-alt"></i> Allianz Parque</p>
+                                <p class="address">Av. Francisco Matarazzo, 1705</p>
+                                <p><i class="fas fa-calendar-alt"></i> 25/08/2024</p>
+                                <p><i class="fas fa-clock"></i> 21:00</p>
+                                <p class="event-price">R$ 750,00</p>
+                                <a href="#book" class="event-button">Comprar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Eminem -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="images/eminem.png" loading="lazy" alt="Eminem"/>
+                            <h3>Eminem</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="event-info">
+                                <p><i class="fas fa-map-marker-alt"></i> Sambódromo do Anhembi</p>
+                                <p class="address">Av. Olavo Fontoura</p>
+                                <p><i class="fas fa-calendar-alt"></i> 15/09/2024</p>
+                                <p><i class="fas fa-clock"></i> 20:30</p>
+                                <p class="event-price">R$ 850,00</p>
+                                <a href="#book" class="event-button">Comprar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Death in June -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="images/Death in June.png" loading="lazy" alt="Death in June"/>
+                            <h3>Death in June</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="event-info">
+                                <p><i class="fas fa-map-marker-alt"></i> Audio Club</p>
+                                <p class="address">Av. Francisco Matarazzo, 694</p>
+                                <p><i class="fas fa-calendar-alt"></i> 22/09/2024</p>
+                                <p><i class="fas fa-clock"></i> 22:00</p>
+                                <p class="event-price">R$ 280,00</p>
+                                <a href="#book" class="event-button">Comprar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="poster">
+            <h2>Museus em Destaque</h2>
+            <div class="poster-main">
+                <!-- MASP -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="images/masp.jpg" loading="lazy" alt="MASP"/>
+                            <h3>MASP</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="event-info">
+                                <p><i class="fas fa-map-marker-alt"></i> Av. Paulista, 1578</p>
+                                <p class="address">Bela Vista, São Paulo</p>
+                                <p><i class="fas fa-calendar-alt"></i> Terça a Domingo</p>
+                                <p><i class="fas fa-clock"></i> 10:00 - 18:00</p>
+                                <p class="event-price">R$ 50,00</p>
+                                <a href="#book" class="event-button">Comprar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pinacoteca -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="images/pinacoteca.jpg" loading="lazy" alt="Pinacoteca"/>
+                            <h3>Pinacoteca</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="event-info">
+                                <p><i class="fas fa-map-marker-alt"></i> Praça da Luz, 2</p>
+                                <p class="address">Luz, São Paulo</p>
+                                <p><i class="fas fa-calendar-alt"></i> Quarta a Segunda</p>
+                                <p><i class="fas fa-clock"></i> 10:00 - 17:30</p>
+                                <p class="event-price">R$ 40,00</p>
+                                <a href="#book" class="event-button">Comprar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MIS -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="images/mis.jpg" loading="lazy" alt="MIS"/>
+                            <h3>MIS</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="event-info">
+                                <p><i class="fas fa-map-marker-alt"></i> Av. Europa, 158</p>
+                                <p class="address">Jardim Europa, São Paulo</p>
+                                <p><i class="fas fa-calendar-alt"></i> Terça a Domingo</p>
+                                <p><i class="fas fa-clock"></i> 10:00 - 19:00</p>
+                                <p class="event-price">R$ 30,00</p>
+                                <a href="#book" class="event-button">Comprar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Stand-up -->
+        <section class="poster">
+            <h2>Stand-up Comedy</h2>
+            <div class="poster-main">
+                <!-- Fábio Porchat -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="images/porchat.jpg" loading="lazy" alt="Fábio Porchat"/>
+                            <h3>Fábio Porchat</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="event-info">
+                                <p><i class="fas fa-map-marker-alt"></i> Teatro Procópio Ferreira</p>
+                                <p class="address">Rua Augusta, 2823</p>
+                                <p><i class="fas fa-calendar-alt"></i> 05/07/2024</p>
+                                <p><i class="fas fa-clock"></i> 21:00</p>
+                                <p class="event-price">R$ 120,00</p>
+                                <a href="#book" class="event-button">Comprar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Thiago Ventura -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="images/thiago-ventura.jpg" loading="lazy" alt="Thiago Ventura"/>
+                            <h3>Thiago Ventura</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="event-info">
+                                <p><i class="fas fa-map-marker-alt"></i> Teatro Opus</p>
+                                <p class="address">Shopping Villa-Lobos</p>
+                                <p><i class="fas fa-calendar-alt"></i> 12/07/2024</p>
+                                <p><i class="fas fa-clock"></i> 22:00</p>
+                                <p class="event-price">R$ 90,00</p>
+                                <a href="#book" class="event-button">Comprar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Afonso Padilha -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="images/afonso-padilha.jpg" loading="lazy" alt="Afonso Padilha"/>
+                            <h3>Afonso Padilha</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="event-info">
+                                <p><i class="fas fa-map-marker-alt"></i> Teatro Renaissance</p>
+                                <p class="address">Alameda Santos, 2233</p>
+                                <p><i class="fas fa-calendar-alt"></i> 19/07/2024</p>
+                                <p><i class="fas fa-clock"></i> 21:30</p>
+                                <p class="event-price">R$ 80,00</p>
+                                <a href="#book" class="event-button">Comprar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="sponsor"> 
+            <h2>Patrocinadores</h2>
+            <div class="sponsor-main">
+                <div class="sponsor-image">
+                    <img src="images/lola.png" loading="lazy" alt="Logo Lola"/>
+                </div>
+                <div class="sponsor-image">
+                    <img src="images/meta.png" loading="lazy" alt="Logo Meta"/>
+                </div>
+                <div class="sponsor-image">
+                    <img src="images/hard.png" loading="lazy" alt="Logo Hard Rock"/>
+                </div>
+                <div class="sponsor-image">
+                    <img src="images/guns.png" loading="lazy" alt="Logo Guns N' Roses"/>
+                </div>
+            </div>
+        </section>
+
+        <section class="ticket" id="ticket">
+            <h2>Pacote de ingressos</h2>
+            <div class="ticket-main">
+                <div class="ticket-list ticket-pro">
+                    <h4 class="ticket-header">VIP</h4>
+                    <div class="ticket-icon">
+                        <img src="images/vip-card.png" loading="lazy" alt="Ícone de cartão VIP"/>
+                    </div>
+                    <ul class="ticket-text">
+                        <li>Conjunto grátis</li>
+                        <li>Bebida e comida</li>
+                        <li>Sessão de fotos</li>
+                    </ul>
+                    <a href="#book" class="btn-comprar-principal">
+                        Comprar
+                    </a>
+                    <div class="ticket-price">
+                        <p>R$40</p>
+                    </div>
+                </div>
+                <div class="ticket-list">
+                    <h4 class="ticket-header">Família</h4>
+                    <div class="ticket-icon">
+                        <img src="images/family.png" loading="lazy" alt="Ícone de família"/>
+                    </div>
+                    <ul class="ticket-text">
+                        <li>Passeio grátis</li>
+                        <li>10 sessões de fotos</li>
+                        <li>Bebida e comida</li>
+                    </ul>
+                    <a href="#book" class="btn-comprar-principal">
+                        Comprar
+                    </a>
+                    <div class="ticket-price">
+                        <p>R$60</p>
+                    </div>
+                </div>
+                <div class="ticket-list">
+                    <h4 class="ticket-header">Reserva</h4>
+                    <div class="ticket-icon">
+                        <img src="images/reserva.png" loading="lazy" alt="Ícone de reserva"/>
+                    </div>
+                    <ul class="ticket-text">
+                        <li>Tudo incluso</li>
+                        <li>Sala VIP</li>
+                        <li>Fotos com famosos</li>
+                    </ul>
+                    <a href="#book" class="btn-comprar-principal">
+                        Comprar
+                    </a>
+                    <div class="ticket-price">
+                        <p>R$100</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="buy-ticket" id="book">
+            <h2>Compre seu ingresso agora!</h2>
+            <div class="buy-ticket-main">
+                <div class="buy-ticket-image"> 
+                    <img src="images/evento1.webp" loading="lazy" alt="Evento de música ao vivo">
+                </div>
+                <div class="buy-ticket-form">
+                    <p class="form-intro">Preencha o formulário abaixo e receba seu ingresso digital por e-mail!</p>
+                    <form action="#" method="POST" class="ticket-form">
+                        <div class="form-group">
+                            <label for="fullname">Nome completo:</label>
+                            <input type="text" id="fullname" name="fullname" placeholder="Seu nome completo" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail:</label>
+                            <input type="email" id="email" name="email" placeholder="seu.email@exemplo.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="ticket-type">Tipo de ingresso:</label>
+                            <select id="ticket-type" name="ticket-type" required>
+                                <option value="">Selecione uma opção</option>
+                                <option value="vip">VIP</option>
+                                <option value="family">Família</option>
+                                <option value="reserved">Reserva</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn-comprar-principal">
+                            Garantir meu ingresso!
+                        </button>
+                    </form> 
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Sobre Nós</h4>
+                <p>Cultura na Plateia é sua fonte confiável para ingressos de eventos culturais e shows em São Paulo.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Contato</h4>
+                <ul>
+                    <li><i class="fas fa-phone"></i> (11) 95273-4725</li>
+                    <li><i class="fas fa-envelope"></i> contato@culturanaplateia.com.br</li>
+                    <li><i class="fas fa-map-marker-alt"></i> São Paulo, SP</li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Redes Sociais</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 Cultura na Plateia. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuIcon = document.querySelector('.menu-icon');
+            const navLinks = document.querySelector('.nav-links');
+
+            menuIcon.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+            });
+
+            
+            const links = document.querySelectorAll('.nav-links a');
+            links.forEach(link => {
+                link.addEventListener('click', function() {
+                    navLinks.classList.remove('active');
+                });
+            });
+        });
+    </script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const buyForm = document.querySelector('#book form');
+        if (buyForm) {
+            buyForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                window.location.href = 'pagamento.html';
+            });
+        }
+    });
+    </script>
+
+    
+    <div class="cart-icon" id="cartIcon">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count">0</span>
+    </div>
+
+    
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Seu Carrinho</h3>
+            <button type="button" class="close-cart" id="closeCart">&times;</button>
+        </div>
+        
+        <div class="cart-items" id="cartItems">
+            
+        </div>
+        
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">R$ 0,00</span>
+            </div>
+            <button class="btn-comprar-principal" id="checkoutButton">
+                Finalizar Compra
+            </button>
+        </div>
+    </div>
+
+    
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <script src="cart.js"></script>
+
+</body>
+</html>
